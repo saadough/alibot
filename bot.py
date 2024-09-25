@@ -22,7 +22,7 @@ def handle_message(update, context):
 # دالة تتبع الطلبات
 def track_order(update, context):
     tracking_id = context.args[0]
-    api_key = os.getenv('ALIEXPRESS_API_KEY')
+    api_key = os.getenv('7881482246:AAFzeyJtVgCJk1jINXGcKyoWBouuODsz7l8')
     response = requests.get(f'https://api.aliexpress.com/track/{tracking_id}', headers={'Authorization': f'Bearer {api_key}'})
     if response.status_code == 200:
         update.message.reply_text(f'حالة الطلب: {response.json()["status"]}')
